@@ -1,0 +1,308 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-gradient: linear-gradient(135deg, #ec008c, #fc6767, #a832ff, #00dbde);
+    --dark-bg: #07011c;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --border-glow: rgba(255, 255, 255, 0.08);
+    --neon-yellow: #fff200;
+    --neon-pink: #ff007f;
+    --neon-blue: #00e5ff;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--dark-bg);
+    /* Fundo degradê psicodélico suave imitando o arco-íris do cartaz */
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(236, 0, 140, 0.2) 0px, transparent 45%),
+        radial-gradient(at 100% 0%, rgba(0, 229, 255, 0.15) 0px, transparent 45%),
+        radial-gradient(at 50% 50%, rgba(127, 0, 255, 0.1) 0px, transparent 50%);
+    background-attachment: fixed;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* LAYOUT HERO EM DUAS COLUNAS */
+.hero {
+    padding: 80px 0 60px 0;
+    position: relative;
+}
+
+.hero-grid-main {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-text-side {
+    text-align: left;
+}
+
+.badge-main {
+    display: inline-block;
+    background: rgba(236, 0, 140, 0.2);
+    border: 1px solid var(--neon-pink);
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    color: #fff;
+    margin-bottom: 25px;
+}
+
+.em-palco {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--neon-yellow);
+    letter-spacing: 3px;
+}
+
+.glow-text {
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 1;
+    background: linear-gradient(to right, #fff, #ffe600);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0px 4px 15px rgba(255, 242, 0, 0.4));
+}
+
+.sub-artist {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--neon-blue);
+    text-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+}
+
+.origin {
+    margin-top: 25px;
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.8);
+}
+
+/* ESTILOS DO CRONÔMETRO REGRESSIVO */
+.countdown-container {
+    margin-top: 35px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 20px;
+    max-width: 450px;
+    backdrop-filter: blur(10px);
+}
+
+.countdown-title {
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.time-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time-block span {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: var(--neon-yellow);
+    line-height: 1;
+    text-shadow: 0 0 15px rgba(255, 242, 0, 0.5);
+}
+
+.time-block small {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 5px;
+    letter-spacing: 1px;
+    opacity: 0.7;
+}
+
+/* IMAGEM FLUTUANTE (Efeito Uau) */
+.hero-image-side {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.main-artist-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+.floating-img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 30px;
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.7));
+    /* Animação para a foto ficar subindo e descendo de leve */
+    animation: floatAnimation 4s ease-in-out infinite;
+}
+
+.glow-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 350px;
+    background: var(--primary-gradient);
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.4;
+    z-index: -1;
+}
+
+@keyframes floatAnimation {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+/* SEÇÃO LINE-UP (NOVOS CARDS) */
+.lineup-section {
+    padding: 60px 0 30px 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #fff;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--neon-pink);
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+
+.lineup-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.artist-card {
+    background: rgba(20, 10, 45, 0.5);
+    border: 1px solid var(--border-glow);
+    border-radius: 20px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.artist-card:hover {
+    transform: scale(1.03);
+    border-color: var(--neon-pink);
+}
+
+.artist-thumb {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.artist-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top; /* Ajustado aqui para focar e mostrar o rosto do Kamane Kamas no topo */
+    transition: transform 0.5s;
+}
+
+.artist-card:hover .artist-thumb img {
+    transform: scale(1.1);
+}
+
+.artist-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.artist-info h4 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.artist-info p {
+    font-size: 0.9rem;
+    color: var(--neon-blue);
+    font-weight: 600;
+}
+
+/* CARDS DE INFORMAÇÃO COMPLEMENTAR */
+.main-content { margin-bottom: 60px; }
+.info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin: 40px 0; }
+.info-card { background: var(--card-bg); border: 1px solid var(--border-glow); border-top: 4px solid var(--neon-pink); padding: 35px 25px; border-radius: 24px; text-align: center; backdrop-filter: blur(12px); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4); }
+.location-card { border-top-color: var(--neon-blue); }
+.card-icon { font-size: 2rem; margin-bottom: 15px; color: rgba(255,255,255,0.3); }
+.info-card h3 { font-size: 0.9rem; letter-spacing: 2px; color: rgba(255,255,255,0.5); margin-bottom: 10px; }
+.highlight-day { font-size: 2.5rem; font-weight: 900; color: var(--neon-pink); }
+.highlight-location { font-size: 2.5rem; font-weight: 900; color: var(--neon-blue); }
+.date-detail { font-size: 1.2rem; font-weight: 600; margin-top: 5px; }
+.badge-manha { display: inline-block; background: var(--neon-yellow); color: #000; font-weight: 900; padding: 4px 20px; border-radius: 50px; margin-top: 15px; font-size: 0.85rem; }
+
+/* INGRESSOS */
+.ticket-section { background: var(--card-bg); border: 1px solid var(--border-glow); border-radius: 28px; padding: 10px; backdrop-filter: blur(12px); }
+.discount-ribbon { background: linear-gradient(90deg, #ff007f, #7f00ff); color: #fff; padding: 15px; border-radius: 20px; text-align: center; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 12px; }
+.discount-ribbon strong { color: var(--neon-yellow); }
+.ticket-container { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; padding: 40px 30px; gap: 30px; }
+.ticket-info h2 { font-size: 2rem; font-weight: 900; }
+.ticket-info p { color: rgba(255, 255, 255, 0.7); }
+.btn-glow { display: inline-block; background: var(--primary-gradient); background-size: 200% auto; color: #fff; text-decoration: none; font-weight: 900; font-size: 1.1rem; padding: 20px 40px; border-radius: 20px; transition: all 0.4s ease; box-shadow: 0 0 20px rgba(236, 0, 140, 0.4); }
+.btn-glow:hover { background-position: right center; box-shadow: 0 0 30px rgba(0, 229, 255, 0.6); transform: scale(1.03); }
+
+/* FOOTER */
+footer { background: #03000d; padding: 40px 0; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+.partners-title { font-size: 0.8rem; font-weight: 900; letter-spacing: 3px; color: rgba(255,255,255,0.3); margin-bottom: 15px; }
+.partners-text { font-size: 0.9rem; font-weight: 600; color: rgba(255,255,255,0.5); max-width: 800px; margin: 0 auto 25px auto; line-height: 1.8; }
+footer .copy { font-size: 0.8rem; color: rgba(255,255,255,0.3); }
+
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+    .hero-grid-main { grid-template-columns: 1fr; text-align: center; }
+    .hero-text-side { text-align: center; }
+    .glow-text { font-size: 3.5rem; }
+    .sub-artist { font-size: 2.2rem; }
+    .ticket-container { text-align: center; justify-content: center; }
+    .btn-glow { width: 100%; }
+    .countdown-container { margin: 30px auto 0 auto; }
+    .time-block span { font-size: 2.2rem; }
+}
