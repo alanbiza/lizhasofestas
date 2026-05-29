@@ -47,7 +47,7 @@
 
             <div class="hero-image-side">
                 <div class="main-artist-wrapper">
-                    <img src="imagens/031choppa.jpg" alt="031Choppa" class="floating-img">
+                    <img src="031choppa.jpg" alt="031Choppa" class="floating-img">
                     <div class="glow-circle"></div>
                 </div>
             </div>
@@ -63,7 +63,7 @@
                 
                 <div class="artist-card">
                     <div class="artist-thumb">
-                        <img src="imagens/hot-blaze.jpg" alt="Hot Blaze">
+                        <img src="hot-blaze.jpg" alt="Hot Blaze">
                     </div>
                     <div class="artist-info">
                         <h4>Hot Blaze</h4>
@@ -73,7 +73,7 @@
 
                 <div class="artist-card">
                     <div class="artist-thumb">
-                        <img src="imagens/kamane-kamas.jpg" alt="Kamane Kamas">
+                        <img src="kamane-kamas.jpg" alt="Kamane Kamas">
                     </div>
                     <div class="artist-info">
                         <h4>Kamane Kamas</h4>
@@ -83,7 +83,7 @@
 
                 <div class="artist-card">
                     <div class="artist-thumb">
-                        <img src="imagens/dj-dilson.jpg" alt="Dj Dilson">
+                        <img src="dj-dilson.jpg" alt="Dj Dilson">
                     </div>
                     <div class="artist-info">
                         <h4>Dj Dilson</h4>
@@ -123,7 +123,6 @@
                     <p><i class="fa-solid fa-shield-halved"></i> Pagamentos 100% online, seguros e rápidos.</p>
                 </div>
                 <div class="ticket-action">
-                    <!-- Alterado o link para executar a função JavaScript que abre o formulário abaixo -->
                     <a href="javascript:void(0);" onclick="abrirFormulario()" class="btn-glow">
                         <i class="fa-solid fa-ticket"></i> BILHETES À VENDA NA PLATAFORMA
                     </a>
@@ -131,7 +130,6 @@
             </div>
         </section>
 
-        <!-- NOVA SECÇÃO: FORMULÁRIO DE DADOS DE ENTREGA / EMISSÃO -->
         <section id="checkout-area" style="display: none; margin-top: 35px; animation: fadeIn 0.4s ease;">
             <div style="background: rgba(20, 15, 38, 0.7); border: 2px solid #ff4a7d; border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); max-width: 600px; margin: 0 auto;">
                 <h3 style="margin-top: 0; color: #fff; font-size: 22px; font-weight: 800; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 12px; text-align: center; font-family: 'Outfit', sans-serif;">
@@ -153,7 +151,6 @@
                     Será redirecionado para o ambiente de pagamento seguro da <strong>Ratix Pay</strong>. Após concluir a transação, você será enviado automaticamente para o nosso WhatsApp para receber o seu bilhete oficial.
                 </div>
 
-                <!-- Botão direciona diretamente para o link do Ratix enviado -->
                 <button type="button" onclick="prosseguirParaPagamento()" style="background: linear-gradient(90deg, #ff007f, #ff4a7d); color: white; border: none; width: 100%; padding: 18px; font-size: 16px; font-weight: bold; border-radius: 8px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 15px rgba(255, 0, 127, 0.3); font-family: 'Outfit', sans-serif; letter-spacing: 0.5px;">
                     🔒 IR PARA O PAGAMENTO SEGURO
                 </button>
@@ -172,7 +169,6 @@
         </div>
     </footer>
 
-    <!-- CSS EXTRA ADICIONADO PARA ANIMAÇÃO DA NOVA SECÇÃO -->
     <style>
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(15px); }
@@ -196,7 +192,6 @@
                 return;
             }
 
-            // URL do teu checkout único do Ratix Pay
             window.location.href = "https://ratixpay.co.mz/checkout.html?produto=8E4BHZOHJ";
         }
     </script>
